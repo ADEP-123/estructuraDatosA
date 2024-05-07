@@ -1,4 +1,5 @@
 function dibujarPersona(ctx, x, y, color) {
+    ctx.save();
     // Dibujar cabeza
     ctx.beginPath();
     ctx.arc(x, y - 90, 5, 0, Math.PI * 2);
@@ -13,5 +14,6 @@ function dibujarPersona(ctx, x, y, color) {
     ctx.bezierCurveTo(-10, 15, 10, 15, 10, -5); // Ajustamos la curva para la nueva posición
     ctx.fillStyle = color; // Color del cuerpo
     ctx.fill();
+    ctx.restore();
 }
 export default dibujarPersona
