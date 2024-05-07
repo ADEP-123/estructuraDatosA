@@ -5,6 +5,7 @@ class Variables {
             this.contexto = this.canvas.getContext('2d');
             this.agregarPersonaButt = document.getElementById('agregarPersonaBtn');
             this.cantPersonas = 0;
+            this.lastColor = "";
             Variables.instance = this;
         }
         return Variables.instance
@@ -16,6 +17,10 @@ class Variables {
 
     disminuirPersona() {
         this.cantPersonas--;
+    }
+
+    setLastColor(color) {
+        this.lastColor = color
     }
 }
 export default Variables
