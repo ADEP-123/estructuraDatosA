@@ -24,7 +24,11 @@ variables.agregarPersonaButt.addEventListener('click', e => {
 variables.completarTranscButt.addEventListener("click", e => {
     e.preventDefault();
     e.stopPropagation();
-    variables.quitarPersonaEsp();
-    clearCanvas(variables.contexto, variables.canvas.width, variables.canvas.height)
-    redibujarFila(variables.contexto, variables.arrPersonasEnEsp)
+    if (variables.arrPersonasEnEsp.length == 0) {
+        alert("No hay personas usando el cajero")
+    } else {
+        variables.quitarPersonaEsp();
+        clearCanvas(variables.contexto, variables.canvas.width, variables.canvas.height)
+        redibujarFila(variables.contexto, variables.arrPersonasEnEsp)
+    }
 })
