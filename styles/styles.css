@@ -1,0 +1,26 @@
+:root {
+    --white: #ffffff;
+    --gray:#5c616b;
+    --gray2:#757880;
+    --black:#1e2025;
+    --red:#bb0000;
+    --blue1:#daf6ff;
+    --blue2:#0aafe6;
+    --whiteRed:#f3b7b7;
+    --whiteYellow:#f5f5b4;
+    --whiteGreen:#c0f5c7;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+canvas {
+    border: 1px solid #000;
+    display: block;
+    margin: 20px auto;
+    width: 90vw;
+    height: 90vh;
+}
