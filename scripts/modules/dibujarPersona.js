@@ -1,19 +1,22 @@
-function dibujarPersona(ctx, x, y, color) {
+function dibujarPersona(ctx, x, y, urlImagen) {
+    let img = new Image()
     ctx.save();
-    // Dibujar cabeza
-    ctx.beginPath();
-    ctx.arc(x, y - 90, 5, 0, Math.PI * 2);
-    ctx.fillStyle = color; // Color de la cabeza
-    ctx.fill();
-
-    // Dibujar cuerpo
-    ctx.beginPath();
-    ctx.translate(x, y - 110 + 35); // Movemos el origen al punto de inicio del cuerpo
-    ctx.rotate(Math.PI); // Rotamos 180 grados
-    ctx.moveTo(-10, -5);
-    ctx.bezierCurveTo(-10, 15, 10, 15, 10, -5); // Ajustamos la curva para la nueva posición
-    ctx.fillStyle = color; // Color del cuerpo
-    ctx.fill();
+    img.onload = function () {
+        let altoimg = 25;
+        let anchoimg = 30;
+        switch (urlImagen) {
+            case "hombre2.png":
+                altoimg = 25;
+                anchoimg = 25;
+                break;
+            case "mujer1.png":
+                altoimg = 30;
+                anchoimg = 30;
+                break;
+        }
+        ctx.drawImage(img, x, y, anchoimg, altoimg)
+    }
+    img.src = `../../images/${urlImagen}`
     ctx.restore();
 }
 export default dibujarPersona

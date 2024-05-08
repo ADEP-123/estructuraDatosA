@@ -1,7 +1,6 @@
 import clearCanvas from "./modules/clearCanvas.js";
-import dibujarCajero from "./modules/dibujarCajero.js";
 import dibujarPersona from "./modules/dibujarPersona.js";
-import randomColor from "./modules/randomColor.js";
+import randomUser from "./modules/randomUser.js";
 import redibujarFila from "./modules/redibujar.js";
 import Variables from "./variables.js";
 
@@ -13,9 +12,9 @@ clearCanvas(variables.contexto, variables.canvas.width, variables.canvas.height)
 variables.agregarPersonaButt.addEventListener('click', e => {
     e.preventDefault();
     e.stopPropagation();
-    const color = randomColor()
-    const x = variables.canvas.width / 2;
-    const y = variables.canvas.height - 40 + (variables.cantPersonas * 10)
+    const color = randomUser()
+    const x = variables.canvas.width / 2 - 15;
+    const y = variables.canvas.height - 140 + (variables.cantPersonas * 10)
     variables.agregarPersonaEsp(x, y, color)
     dibujarPersona(variables.contexto, x, y, color);
     variables.aumentarPersona();
