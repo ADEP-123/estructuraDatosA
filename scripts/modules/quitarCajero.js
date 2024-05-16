@@ -11,6 +11,7 @@ export default function quitarCajero() {
     }
     //Quitando el cajero
     variables.zonaCajas.removeChild(primerCajeroLibre);
+    variables.quitarCajero();
     //Redibujando las duplas
     const duplasPersCajero = variables.persCajeros
     redibujarUsoCajero(duplasPersCajero)
