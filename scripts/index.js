@@ -5,6 +5,7 @@ import completarTransaccion from "./modules/completarTransaccion.js";
 import dibujarPersonaEnCajeroLibre from "./modules/dibujarPersonaEnCajeroLibre.js";
 import quitarCajero from "./modules/quitarCajero.js";
 import randomUser from "./modules/randomUser.js";
+import redibujarFilaEspera from "./modules/redibujarFilaEspera.js";
 import Variables from "./variables.js";
 
 //inicializar las variables
@@ -25,17 +26,7 @@ variables.agregarCajeroButt.addEventListener('click', e => {
             agregarCajero()
             //detectar si hay personas en espera y si es asi pasar la primera persona en espera al cajero nuevo disponible
             if (variables.arrPersonasEnEsp.length != 0) {
-                const cajeroLibre = document.querySelector(".cajeroLibre")
-                const user = variables.arrPersonasEnEsp[0]
-                if (variables.arrPersonasEnEsp.length > 1) {
-                    for (let i = variables.arrPersonasEnEsp.length - 1; i > 0; i--) {
-                        variables.arrPersonasEnEsp[i].style.top = variables.arrPersonasEnEsp[i - 1].style.top
-                    }
-                }
-                dibujarPersonaEnCajeroLibre(cajeroLibre, user)
-                user.classList.remove("personaEnEspera");
-                const newPersonasEnEsp = variables.arrPersonasEnEsp.slice(1);
-                variables.setNewArrPersEnEsp(newPersonasEnEsp)
+               redibujarFilaEspera()
             }
         }
     }

@@ -2,6 +2,7 @@ import Variables from "../variables.js";
 
 const variables = new Variables
 export default function dibujarPersonaEnCajeroLibre(cajero, persona) {
+    // v
     const cajeroLibre = cajero;
     const imageElement = persona;
     //obtener las coordenadas del cajero

@@ -16,7 +16,7 @@ export default function agregarPersona(persona) {
     const widthCajero = document.querySelector(".cajeroImg").clientWidth
     imageUser.src = `../../images/${persona}`
     imageUser.width = widthCajero;
-    imageUser.id = `pers${variables.cantPersonas}`;
+    imageUser.id = `pers${variables.lastIdPersona}`;
 
     //detectar si la persona se sale de la zona de juego
     if (variables.arrPersonasEnEsp.length > 0) {
@@ -29,7 +29,7 @@ export default function agregarPersona(persona) {
     }
 
     variables.zonaCola.appendChild(imageUser);
-    const imageElement = variables.zonaCola.querySelector(`#pers${variables.cantPersonas}`)
+    const imageElement = variables.zonaCola.querySelector(`#pers${variables.lastIdPersona}`)
     imageElement.style.position = "absolute";
     //Determinar si un cajero esta disponible
     if (cajeroLibre) {
@@ -44,6 +44,7 @@ export default function agregarPersona(persona) {
         //obtener el array de personas en espera anterior
         const arrPersEnEspAnterior = variables.arrPersonasEnEsp
         imageElement.style.top = `${(variables.cantPersonas - variables.cantCajeros + 1) * 60 + (topCoordCaj * 1.5)}px`
+        console.log(imageElement.style.top);
         imageElement.style.left = `46%`
         imageElement.classList.add("personaEnEspera")
         arrPersEnEspAnterior.push(imageElement)
@@ -51,5 +52,4 @@ export default function agregarPersona(persona) {
     }
     variables.setLastuser(persona)
     variables.agregarPersona();
-
 }

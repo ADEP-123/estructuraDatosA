@@ -16,6 +16,7 @@ class Variables {
             this.arrPersonasEnEsp = [];
             this.personaPos = 0;
             this.persCajeros = [];
+            this.lastIdPersona = 0;
             Variables.instance = this;
         }
         return Variables.instance
@@ -23,6 +24,7 @@ class Variables {
 
     agregarPersona() {
         this.cantPersonas++;
+        this.lastIdPersona++;
     }
 
     quitarPersona() {
