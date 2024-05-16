@@ -6,11 +6,13 @@ export default function agregarPersona(persona) {
         alert("Primero debe agregarse un cajero")
         return
     }
+    //Obtener el primer cajero disponible
     const cajeroLibre = variables.zonaCajas.querySelector(".cajeroLibre");
     if (cajeroLibre) {
+        //obtener las coordenadas del cajero
         const coordCajeroLibre = cajeroLibre.getBoundingClientRect();
-        console.log(coordCajeroLibre);
 
+        //setear las propiedades de la imagen para insertarla a la cola, en este caso sobre el primer cajero libre
         const imageUser = document.createElement("img");
         const widthCajero = document.querySelector(".cajeroImg").clientWidth
         imageUser.src = `../../images/${persona}`
@@ -22,8 +24,17 @@ export default function agregarPersona(persona) {
         imageElement.style.position = "absolute";
         imageElement.style.top = `${coordCajeroLibre.top}px`;
         imageElement.style.left = `${coordCajeroLibre.left}px`;
+        imageElement.classList.add("personaEnCajero")
 
+        //quitar el estado libre al cajero
         cajeroLibre.classList.remove("cajeroLibre")
+
+        //Crear la dupla de la persona con el cajero y las coordenadas
+        const listaDuplasAnterior = variables.persCajeros
+
+        const dupla = { cajero: cajeroLibre.id, persona: imageElement.id, coord: { top: `${coordCajeroLibre.top}px`, left: `${coordCajeroLibre.left}px` } }
+        listaDuplasAnterior.push(dupla)
+        variables.setNewPersCajero(listaDuplasAnterior);
 
         variables.setLastuser(persona)
         variables.agregarPersona();
