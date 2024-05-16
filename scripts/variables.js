@@ -4,14 +4,15 @@ class Variables {
             this.canvas = document.getElementById('colaDiv');
             this.zonaCajas = document.getElementById('cajas');
             this.zonaCola = document.getElementById('cola');
+            this.zonaPersonasEnCajero = document.getElementById('personasEnCajero');
             this.agregarPersonaButt = document.getElementById('agregarPersonaBtn');
             this.agregarCajeroButt = document.getElementById('agregarCajeroBtn');
             this.quitarCajeroButt = document.getElementById('eliminarCajeroBtb');
             this.completarTranscButt = document.getElementById('eliminarPersonaBtn');
-            this.maxWidthGame =  document.getElementById('juegoDiv').clientWidth;
+            this.maxWidthGame = document.getElementById('juegoDiv').clientWidth;
             this.cantPersonas = 0;
             this.cantCajeros = 0;
-            this.lastColor = "";
+            this.lastUser = "";
             this.arrPersonasEnEsp = [];
             this.personaPos = 0;
             Variables.instance = this;
@@ -19,35 +20,22 @@ class Variables {
         return Variables.instance
     }
 
-    aumentarPersona() {
+    agregarPersona() {
         this.cantPersonas++;
     }
 
-    disminuirPersona() {
+    quitarPersona() {
         this.cantPersonas--;
     }
 
-    setLastColor(color) {
-        this.lastColor = color
+    setLastuser(user) {
+        this.lastUser = user
     }
 
-    agregarPersonaEsp(x, y, color) {
-        this.arrPersonasEnEsp.push({ pos: this.personaPos, x, y, color })
-        this.personaPos++;
-    }
-
-    quitarPersonaEsp() {
-        for (let i = this.arrPersonasEnEsp.length - 1; i > 0; i--) {
-            this.arrPersonasEnEsp[i].x = this.arrPersonasEnEsp[i - 1].x
-            this.arrPersonasEnEsp[i].y = this.arrPersonasEnEsp[i - 1].y
-        }
-        this.arrPersonasEnEsp.shift()
-        this.cantPersonas = this.arrPersonasEnEsp.length
-    }
-    agregarCajero(){
+    agregarCajero() {
         this.cantCajeros++
     }
-    quitarCajero(){
+    quitarCajero() {
         this.cantCajeros--
     }
 }

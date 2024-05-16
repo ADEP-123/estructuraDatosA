@@ -61,15 +61,24 @@ header{
     width: 100%;
 }
 
-.zonaCajas{
+.zonaCajas, .personasEnCajero{
     overflow: hidden;
     max-width: 100%;
-    background-color: red;
+    /* background-color: red; */
     height: 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+}
+
+.personasEnCajero{
+    z-index: 1;
+    position: absolute;
+    top: 20%;
+}
+.personasEnCajero img{
+    height: 100%;
 }
 
 .cajeroImg{
