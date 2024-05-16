@@ -41,7 +41,7 @@ export default function agregarPersona(persona) {
 
         //obtener el array de personas en espera anterior
         const arrPersEnEspAnterior = variables.arrPersonasEnEsp
-        imageElement.style.top = `${(variables.cantPersonas - variables.cantCajeros + 1) * 60 + (topCoordCaj * 1.5)}px`
+        imageElement.style.top = `${arrPersEnEspAnterior.length * 60 + (topCoordCaj * 1.5)}px`
         console.log(imageElement.style.top);
         imageElement.style.left = `46%`
         imageElement.classList.add("personaEnEspera")
