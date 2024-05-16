@@ -6,7 +6,9 @@ class Variables {
             this.zonaCola = document.getElementById('cola');
             this.agregarPersonaButt = document.getElementById('agregarPersonaBtn');
             this.agregarCajeroButt = document.getElementById('agregarCajeroBtn');
+            this.quitarCajeroButt = document.getElementById('eliminarCajeroBtb');
             this.completarTranscButt = document.getElementById('eliminarPersonaBtn');
+            this.maxWidthGame =  document.getElementById('juegoDiv').clientWidth;
             this.cantPersonas = 0;
             this.cantCajeros = 0;
             this.lastColor = "";
@@ -44,6 +46,9 @@ class Variables {
     }
     agregarCajero(){
         this.cantCajeros++
+    }
+    quitarCajero(){
+        this.cantCajeros--
     }
 }
 export default Variables
