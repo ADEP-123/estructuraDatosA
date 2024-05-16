@@ -31,6 +31,7 @@ export default function agregarPersona(persona) {
         const arrPersEnEspAnterior = variables.arrPersonasEnEsp
         imageElement.style.top = `${(variables.cantPersonas - variables.cantCajeros + 1) * 60 + (topCoordCaj * 1.5)}px`
         imageElement.style.left = `46%`
+        imageElement.classList.add("personaEnEspera")
         arrPersEnEspAnterior.push(imageElement)
         variables.setNewArrPersEnEsp(arrPersEnEspAnterior)
     }
