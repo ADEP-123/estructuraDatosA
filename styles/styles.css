@@ -74,11 +74,14 @@ header{
 
 .cajeroImg{
     height: 80%;
+    z-index: -1;
 }
 
 .zonaCola{
     height: 80%;
+    overflow: hidden;
 }
 .zonaCola img{
     height: 20%;
+    z-index: -1;
 }

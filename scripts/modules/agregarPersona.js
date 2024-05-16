@@ -3,6 +3,7 @@ import dibujarPersonaEnCajeroLibre from "./dibujarPersonaEnCajeroLibre.js";
 
 const variables = new Variables
 export default function agregarPersona(persona) {
+
     if (variables.cantCajeros == 0) {
         alert("Primero debe agregarse un cajero")
         return
@@ -16,6 +17,18 @@ export default function agregarPersona(persona) {
     imageUser.src = `../../images/${persona}`
     imageUser.width = widthCajero;
     imageUser.id = `pers${variables.cantPersonas}`;
+
+    //detectar si la persona se sale de la zona de juego
+    if (variables.arrPersonasEnEsp.length > 0) {
+        const heightZonaEspera = variables.zonaCola.clientHeight
+        const lastUserHeigth = variables.arrPersonasEnEsp[0].clientHeight
+        if (((lastUserHeigth * 0.5) * variables.arrPersonasEnEsp.length) > heightZonaEspera) {
+            alert("no puede haber mas personas en la fila de espera")
+            return
+        }
+    }
+
+
     variables.zonaCola.appendChild(imageUser);
     const imageElement = variables.zonaCola.querySelector(`#pers${variables.cantPersonas}`)
     imageElement.style.position = "absolute";

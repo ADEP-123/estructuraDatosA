@@ -4,7 +4,6 @@ class Variables {
             this.canvas = document.getElementById('colaDiv');
             this.zonaCajas = document.getElementById('cajas');
             this.zonaCola = document.getElementById('cola');
-
             this.agregarPersonaButt = document.getElementById('agregarPersonaBtn');
             this.agregarCajeroButt = document.getElementById('agregarCajeroBtn');
             this.quitarCajeroButt = document.getElementById('eliminarCajeroBtb');
