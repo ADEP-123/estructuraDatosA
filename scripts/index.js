@@ -1,3 +1,4 @@
+import agregarCajero from "./modules/agregarCajero.js";
 import clearCanvas from "./modules/clearCanvas.js";
 import dibujarPersona from "./modules/dibujarPersona.js";
 import randomUser from "./modules/randomUser.js";
@@ -8,11 +9,18 @@ import Variables from "./variables.js";
 const variables = new Variables;
 
 //Dibujar el cajero
-clearCanvas(variables.contexto, variables.canvas.width, variables.canvas.height)
+variables.agregarCajeroButt.addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    agregarCajero()
+})
+
+
+
 variables.agregarPersonaButt.addEventListener('click', e => {
     e.preventDefault();
     e.stopPropagation();
-    const color = randomUser()
+    const user = randomUser()
     const x = variables.canvas.width / 2 - 15;
     const y = variables.canvas.height - 140 + (variables.cantPersonas * 10)
     variables.agregarPersonaEsp(x, y, color)
