@@ -1,4 +1,5 @@
 import Variables from "../variables.js";
+import dibujarPersonaEnCajeroLibre from "./dibujarPersonaEnCajeroLibre.js";
 
 const variables = new Variables
 export default function agregarPersona(persona) {
@@ -20,23 +21,8 @@ export default function agregarPersona(persona) {
     imageElement.style.position = "absolute";
     //Determinar si un cajero esta disponible
     if (cajeroLibre) {
-        //obtener las coordenadas del cajero
-        const coordCajeroLibre = cajeroLibre.getBoundingClientRect();
-
-        //Setear las coordenadas de la persona en el cajero desponible
-        imageElement.style.top = `${coordCajeroLibre.top}px`;
-        imageElement.style.left = `${coordCajeroLibre.left}px`;
-        imageElement.classList.add("personaEnCajero")
-
-        //quitar el estado libre al cajero
-        cajeroLibre.classList.remove("cajeroLibre")
-
-        //Crear la dupla de la persona con el cajero y las coordenadas
-        const listaDuplasAnterior = variables.persCajeros
-
-        const dupla = { cajero: cajeroLibre.id, persona: imageElement.id, coord: { top: `${coordCajeroLibre.top}px`, left: `${coordCajeroLibre.left}px` } }
-        listaDuplasAnterior.push(dupla)
-        variables.setNewPersCajero(listaDuplasAnterior);
+        //funcion para dibujar una persona en un cajero
+        dibujarPersonaEnCajeroLibre(cajeroLibre, imageElement)
     } else {
         //obtener la coordenada top de un cajero
         const topCoordCaj = parseInt(variables.persCajeros[0].coord.top)
