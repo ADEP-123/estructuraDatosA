@@ -4,7 +4,7 @@ class Variables {
             this.canvas = document.getElementById('colaDiv');
             this.zonaCajas = document.getElementById('cajas');
             this.zonaCola = document.getElementById('cola');
-            this.zonaPersonasEnCajero = document.getElementById('personasEnCajero');
+
             this.agregarPersonaButt = document.getElementById('agregarPersonaBtn');
             this.agregarCajeroButt = document.getElementById('agregarCajeroBtn');
             this.quitarCajeroButt = document.getElementById('eliminarCajeroBtb');
@@ -15,6 +15,7 @@ class Variables {
             this.lastUser = "";
             this.arrPersonasEnEsp = [];
             this.personaPos = 0;
+            this.persCajeros = [];
             Variables.instance = this;
         }
         return Variables.instance
@@ -35,8 +36,13 @@ class Variables {
     agregarCajero() {
         this.cantCajeros++
     }
+
     quitarCajero() {
         this.cantCajeros--
+    }
+
+    setNewPersCajero(persCajeros) {
+        this.persCajeros = persCajeros
     }
 }
 export default Variables

@@ -6,16 +6,30 @@ export default function agregarPersona(persona) {
         alert("Primero debe agregarse un cajero")
         return
     }
-    if (variables.cantCajeros == variables.cantPersonas) {
+    const cajeroLibre = variables.zonaCajas.querySelector(".cajeroLibre");
+    if (cajeroLibre) {
+        const coordCajeroLibre = cajeroLibre.getBoundingClientRect();
+        console.log(coordCajeroLibre);
+
+        const imageUser = document.createElement("img");
+        const widthCajero = document.querySelector(".cajeroImg").clientWidth
+        imageUser.src = `../../images/${persona}`
+        imageUser.width = widthCajero;
+        imageUser.id = `pers${variables.cantPersonas}`;
+        variables.zonaCola.appendChild(imageUser);
+
+        const imageElement = variables.zonaCola.querySelector(`#pers${variables.cantPersonas}`)
+        imageElement.style.position = "absolute";
+        imageElement.style.top = `${coordCajeroLibre.top}px`;
+        imageElement.style.left = `${coordCajeroLibre.left}px`;
+
+        cajeroLibre.classList.remove("cajeroLibre")
+
+        variables.setLastuser(persona)
+        variables.agregarPersona();
+    } else {
         alert("Ya no se pueden agregar mas personas a los cajeros")
         return
     }
-    const widthCajero = document.querySelector(".cajeroImg").clientWidth
-    console.log(widthCajero);
-    const imageUser = document.createElement("img");
-    imageUser.src = `../../images/${persona}`
-    imageUser.width = widthCajero;
-    variables.zonaPersonasEnCajero.insertAdjacentElement("beforeend", imageUser)
-    variables.setLastuser(persona)
-    variables.agregarPersona();
+
 }
