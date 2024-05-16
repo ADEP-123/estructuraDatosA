@@ -1,6 +1,7 @@
 import agregarCajero from "./modules/agregarCajero.js";
 import agregarPersona from "./modules/agregarPersona.js";
 import checkWidth from "./modules/checkWidth.js";
+import completarTransaccion from "./modules/completarTransaccion.js";
 import dibujarPersonaEnCajeroLibre from "./modules/dibujarPersonaEnCajeroLibre.js";
 import quitarCajero from "./modules/quitarCajero.js";
 import randomUser from "./modules/randomUser.js";
@@ -56,8 +57,12 @@ variables.quitarCajeroButt.addEventListener('click', e => {
     quitarCajero();
 });
 
+//Listener para detectar cuando completar una transaccion
 variables.completarTranscButt.addEventListener("click", e => {
     e.preventDefault();
     e.stopPropagation();
-
+    if (variables.persCajeros.length == 0) {
+        alert("Debe haber almenos una persona en un cajero")
+    }
+    completarTransaccion()
 })

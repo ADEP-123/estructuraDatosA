@@ -12,6 +12,12 @@ export default function quitarCajero() {
     //Quitando el cajero
     variables.zonaCajas.removeChild(primerCajeroLibre);
     variables.quitarCajero();
+    //Actualizando el select para completar transaccion 
+    for (let i = 0; i < variables.complTransSelect.options.length; i++) {
+        if (variables.complTransSelect.options[i].value == primerCajeroLibre.id) {
+            variables.complTransSelect.removeChild(variables.complTransSelect.options[i])
+        }
+    }
     //Redibujando las duplas
     const duplasPersCajero = variables.persCajeros
     redibujarUsoCajero(duplasPersCajero)

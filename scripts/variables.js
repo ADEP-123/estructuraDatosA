@@ -8,6 +8,7 @@ class Variables {
             this.agregarCajeroButt = document.getElementById('agregarCajeroBtn');
             this.quitarCajeroButt = document.getElementById('eliminarCajeroBtb');
             this.completarTranscButt = document.getElementById('eliminarPersonaBtn');
+            this.complTransSelect = document.getElementById('complTransSelect')
             this.maxWidthGame = document.getElementById('juegoDiv').clientWidth;
             this.cantPersonas = 0;
             this.cantCajeros = 0;

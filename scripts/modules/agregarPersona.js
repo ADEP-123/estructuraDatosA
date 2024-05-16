@@ -35,6 +35,8 @@ export default function agregarPersona(persona) {
     if (cajeroLibre) {
         //funcion para dibujar una persona en un cajero
         dibujarPersonaEnCajeroLibre(cajeroLibre, imageElement)
+        //Actualizando el select para completar transaccion
+        variables.complTransSelect.innerHTML +=/*hmtl*/` <option value="${cajeroLibre.id}">${cajeroLibre.id}</option>`
     } else {
         //obtener la coordenada top de un cajero
         const topCoordCaj = parseInt(variables.persCajeros[0].coord.top)
