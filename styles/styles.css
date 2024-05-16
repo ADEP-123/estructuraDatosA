@@ -34,9 +34,54 @@ header{
     justify-content: center;
 }
 
-canvas {
+#juegoDiv {
     border: 1px solid var(--white);
-    display: block;
+    display: flex;
     width: 70%;
     height: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#buttonsPanel{
+    border: 1px solid var(--white);
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    height: 8%;
+    justify-content: space-around;
+}
+
+#colaDiv{
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.zonaCajas{
+    overflow: hidden;
+    max-width: 100%;
+    /* background-color: red; */
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cajeroImg{
+    height: 80%;
+    z-index: -1;
+}
+
+.zonaCola{
+    height: 80%;
+    overflow: hidden;
+}
+.zonaCola img{
+    height: 20%;
+    z-index: -1;
 }

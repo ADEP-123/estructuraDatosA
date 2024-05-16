@@ -13,11 +13,26 @@
     <header>
         <h1>Actividad 1</h1>
     </header>
-    <canvas id="colaCanvas"></canvas>
-    <div id="buttonsPanel">
-        <button id="agregarPersonaBtn">Agregar Persona</button>
-        <button id="eliminarPersonaBtn">Completar Transaccion</button>
+    <div id="juegoDiv">
+
+        <div id="colaDiv">
+            <div id="cajas" class="zonaCajas"></div>
+        
+            <div id="cola" class="zonaCola"></div>
+        </div>
+
+        <div id="buttonsPanel">
+            <button id="agregarCajeroBtn">Agregar Cajero</button>
+            <button id="eliminarCajeroBtb">Quitar Cajero</button>
+            <button id="agregarPersonaBtn">Agregar Persona</button>
+            <button id="eliminarPersonaBtn">Completar Transaccion</button>
+            <select name="complTransSelect" id="complTransSelect">
+                <option value="0" default>Cajero:</option>
+            </select>
+        </div>
+
     </div>
+
 
     <script src="scripts/index.js" type="module"></script>
 </body>

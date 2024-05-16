@@ -1,43 +1,56 @@
 class Variables {
     constructor() {
         if (!Variables.instance) {
-            this.canvas = document.getElementById('colaCanvas');
-            this.contexto = this.canvas.getContext('2d');
+            this.canvas = document.getElementById('colaDiv');
+            this.zonaCajas = document.getElementById('cajas');
+            this.zonaCola = document.getElementById('cola');
             this.agregarPersonaButt = document.getElementById('agregarPersonaBtn');
+            this.agregarCajeroButt = document.getElementById('agregarCajeroBtn');
+            this.quitarCajeroButt = document.getElementById('eliminarCajeroBtb');
             this.completarTranscButt = document.getElementById('eliminarPersonaBtn');
+            this.complTransSelect = document.getElementById('complTransSelect')
+            this.maxWidthGame = document.getElementById('juegoDiv').clientWidth;
             this.cantPersonas = 0;
-            this.lastColor = "";
+            this.cantCajeros = 0;
+            this.lastUser = "";
             this.arrPersonasEnEsp = [];
             this.personaPos = 0;
+            this.persCajeros = [];
+            this.lastIdPersona = 0;
+            this.lastIdCajero = 0;
             Variables.instance = this;
         }
         return Variables.instance
     }
 
-    aumentarPersona() {
+    agregarPersona() {
         this.cantPersonas++;
+        this.lastIdPersona++;
     }
 
-    disminuirPersona() {
+    quitarPersona() {
         this.cantPersonas--;
     }
 
-    setLastColor(color) {
-        this.lastColor = color
+    setLastuser(user) {
+        this.lastUser = user
     }
 
-    agregarPersonaEsp(x, y, color) {
-        this.arrPersonasEnEsp.push({ pos: this.personaPos, x, y, color })
-        this.personaPos++;
+    agregarCajero() {
+        this.cantCajeros++
+        this.lastIdCajero++
     }
 
-    quitarPersonaEsp() {
-        for (let i = this.arrPersonasEnEsp.length - 1; i > 0; i--) {
-            this.arrPersonasEnEsp[i].x = this.arrPersonasEnEsp[i - 1].x
-            this.arrPersonasEnEsp[i].y = this.arrPersonasEnEsp[i - 1].y
-        }
-        this.arrPersonasEnEsp.shift()
-        this.cantPersonas = this.arrPersonasEnEsp.length
+    quitarCajero() {
+        this.cantCajeros--
+    }
+
+    setNewPersCajero(persCajeros) {
+        this.persCajeros = persCajeros
+    }
+
+    setNewArrPersEnEsp(arrPersonasEnEsp) {
+        this.arrPersonasEnEsp = arrPersonasEnEsp
     }
 }
 export default Variables
