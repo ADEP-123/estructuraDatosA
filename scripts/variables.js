@@ -44,5 +44,9 @@ class Variables {
     setNewPersCajero(persCajeros) {
         this.persCajeros = persCajeros
     }
+
+    setNewArrPersEnEsp(arrPersonasEnEsp) {
+        this.arrPersonasEnEsp = arrPersonasEnEsp
+    }
 }
 export default Variables
