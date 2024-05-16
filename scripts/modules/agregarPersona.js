@@ -28,7 +28,6 @@ export default function agregarPersona(persona) {
         }
     }
 
-
     variables.zonaCola.appendChild(imageUser);
     const imageElement = variables.zonaCola.querySelector(`#pers${variables.cantPersonas}`)
     imageElement.style.position = "absolute";

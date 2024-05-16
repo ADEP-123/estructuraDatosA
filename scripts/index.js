@@ -2,6 +2,7 @@ import agregarCajero from "./modules/agregarCajero.js";
 import agregarPersona from "./modules/agregarPersona.js";
 import checkWidth from "./modules/checkWidth.js";
 import dibujarPersonaEnCajeroLibre from "./modules/dibujarPersonaEnCajeroLibre.js";
+import quitarCajero from "./modules/quitarCajero.js";
 import randomUser from "./modules/randomUser.js";
 import Variables from "./variables.js";
 
@@ -40,6 +41,7 @@ variables.agregarCajeroButt.addEventListener('click', e => {
 
 })
 
+//Listener para detectar cuando insertar una nueva persona
 variables.agregarPersonaButt.addEventListener('click', e => {
     e.preventDefault();
     e.stopPropagation();
@@ -47,7 +49,15 @@ variables.agregarPersonaButt.addEventListener('click', e => {
     agregarPersona(user)
 });
 
+//Listener para detectar cuando quitar un cajero
+variables.quitarCajeroButt.addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    quitarCajero();
+});
+
 variables.completarTranscButt.addEventListener("click", e => {
     e.preventDefault();
     e.stopPropagation();
+
 })
