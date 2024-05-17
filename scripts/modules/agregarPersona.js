@@ -14,7 +14,7 @@ export default function agregarPersona(persona) {
     //setear las propiedades de la imagen para insertarla a la cola
     const imageUser = document.createElement("img");
     const widthCajero = document.querySelector(".cajeroImg").clientWidth
-    imageUser.src = `../../images/${persona}`
+    imageUser.src = `images/${persona}`
     imageUser.width = widthCajero;
     imageUser.id = `pers${variables.lastIdPersona}`;
 

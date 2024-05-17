@@ -3,6 +3,6 @@ function dibujarCajero(ctx, ancho) {
     img.onload = function () {
         ctx.drawImage(img, ancho / 2 - 20, 0, 40, 25)
     }
-    img.src = '../../images/cajero.png'
+    img.src = 'images/cajero.png'
 }
 export default dibujarCajero
