@@ -24,14 +24,25 @@ body{
 .navbar{
     width: 100vw;
     height: 10vh;
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
     align-items: center;
+    grid-template-columns: 80px 1fr 80px;
+}
+
+.navbar h1{
+    grid-column: 2;
+    justify-self: center;
+}
+
+.navbar i{
+    grid-column: 3;
+    justify-self: center;
+    font-size: 1.5vw;
 }
 
 #juegoDiv {
     display: flex;
-    width: 70%;
+    width: 70vw;
     height: 80vh;
     flex-direction: column;
     align-items: center;
@@ -125,6 +136,16 @@ select{
 }
 
 @media (max-width: 700px){
+    .navbar h1{
+        justify-self: center;
+        font-size: 5vw;
+    }
+    
+    .navbar i{
+        grid-column: 3;
+        justify-self: center;
+        font-size: 6vw;
+    }
     #colaDiv{
         height: 80%;
     }
