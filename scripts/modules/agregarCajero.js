@@ -7,7 +7,7 @@ export default function agregarCajero() {
     const image = document.createElement("img")
     // image.id = `caj${cantCajeros}`;
     image.id = `caj${variables.lastIdCajero}`;
-    image.src = '/images/cajero.png'
+    image.src = 'images/cajero.png'
     image.className = "cajeroImg"
     variables.zonaCajas.insertAdjacentElement("beforeend", image)
     const newDuplas = redibujarUsoCajero(variables.persCajeros)
