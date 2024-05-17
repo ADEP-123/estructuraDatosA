@@ -1,60 +1,78 @@
-:root {
-    --white: #ffffff;
-    --gray:#5c616b;
-    --gray2:#757880;
-    --black:#1e2025;
-    --red:#bb0000;
-    --blue1:#daf6ff;
-    --blue2:#0aafe6;
-    --whiteRed:#f3b7b7;
-    --whiteYellow:#f5f5b4;
-    --whiteGreen:#c0f5c7;
+:root{
+    --color--one: #252525;
+    --color--two: #fff;
+    --color--three: #929292;
 }
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body{
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--color--two);
+    color: var(----color--one);
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
-header{
-    width: 100%;
-    height: 15%;
+.navbar{
+    width: 100vw;
+    height: 10vh;
     display: flex;
-    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
 }
 
 #juegoDiv {
-    border: 1px solid var(--white);
     display: flex;
     width: 70%;
-    height: 80%;
+    height: 80vh;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0 4px 10px var(--color--three);
+    border-radius: 1em;
+    margin: 1vw;
 }
 
 #buttonsPanel{
-    border: 1px solid var(--white);
-    padding: 1%;
     display: flex;
     flex-direction: row;
-    height: 8%;
-    justify-content: space-around;
+    height: 5vw;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#buttonsPanel button, select{
+    background: var(--color--one);
+    color: var(--color--two);
+    height: 4vw;
+    border: 0;
+    font-size: 1vw;
+    padding: 1vw 3vw;
+    border-radius: 100px;
+}
+
+select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+#buttonsPanel  button:hover, select:hover{
+    background: var(--color--three);
+    cursor: pointer;
 }
 
 #colaDiv{
-    height: 92%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,7 +82,6 @@ header{
 .zonaCajas{
     overflow: hidden;
     max-width: 100%;
-    /* background-color: red; */
     height: 20%;
     display: flex;
     flex-direction: row;
@@ -84,4 +101,77 @@ header{
 .zonaCola img{
     height: 20%;
     z-index: -1;
+}
+
+.foot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color--one);
+    color: var(--color--two);
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+}
+.footContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 10vh;
+}
+.footContent img{
+    height: 100%;
+}
+
+@media (max-width: 700px){
+    #colaDiv{
+        height: 80%;
+    }
+    #buttonsPanel{
+        padding: 1vw;
+        height: 20%;
+        display: grid;
+        grid-gap: 1vw 3vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "agregarCajero quitarCajero"
+        "agregarPersona transaccion"
+        "selectCajero selectCajero"
+        ;
+    }
+    
+    #buttonsPanel button, select{
+        border: 0;
+        font-size: 3vw;
+        padding: 0 0;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    #agregarCajeroBtn{
+        grid-area: agregarCajero;
+    }
+
+    #eliminarCajeroBtb{
+        grid-area: quitarCajero;
+    }  
+
+    #agregarPersonaBtn{
+        grid-area: agregarPersona;
+    } 
+
+    #eliminarPersonaBtn{
+        grid-area: transaccion;
+    }  
+
+     #complTransSelect{
+        grid-area: selectCajero;
+    }
 }
