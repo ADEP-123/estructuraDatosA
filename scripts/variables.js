@@ -10,6 +10,8 @@ class Variables {
             this.completarTranscButt = document.getElementById('eliminarPersonaBtn');
             this.complTransSelect = document.getElementById('complTransSelect')
             this.maxWidthGame = document.getElementById('juegoDiv').clientWidth;
+            this.errorMessagesList = document.querySelector(".alertas")
+            this.errorMessageEx = document.querySelector(".alerta")
             this.cantPersonas = 0;
             this.cantCajeros = 0;
             this.lastUser = "";

@@ -219,6 +219,7 @@ select{
     border: 2px solid rgb(163, 14, 14);
     border-radius: 3%;
     background-color: rgba(248, 119, 119, 0.247);
+    opacity: 1;
 }
 .alerta img{
     height: 40%;

@@ -1,4 +1,5 @@
 import agregarCajero from "./modules/agregarCajero.js";
+import agregarError from "./modules/agregarError.js";
 import agregarPersona from "./modules/agregarPersona.js";
 import checkWidth from "./modules/checkWidth.js";
 import completarTransaccion from "./modules/completarTransaccion.js";
@@ -11,6 +12,13 @@ import Variables from "./variables.js";
 //inicializar las variables
 const variables = new Variables;
 
+//Copiar el primer mensaje de error y eliminarlo:
+document.addEventListener("DOMContentLoaded", e => {
+    e.preventDefault()
+    e.stopPropagation()
+    variables.errorMessagesList.innerHTML = "";
+})
+
 //Listener para detectar cuando dibujar el cajero
 variables.agregarCajeroButt.addEventListener('click', e => {
     e.preventDefault();
@@ -20,13 +28,13 @@ variables.agregarCajeroButt.addEventListener('click', e => {
     } else {
         //detectar si al agregar el cajero se sale de la zona de juego
         if (!checkWidth()) {
-            alert("No se pueden agregar mas cajeros")
+            agregarError("No se pueden agregar mas cajeros")
         } else {
             //agregar cajero
             agregarCajero()
             //detectar si hay personas en espera y si es asi pasar la primera persona en espera al cajero nuevo disponible
             if (variables.arrPersonasEnEsp.length != 0) {
-               redibujarFilaEspera()
+                redibujarFilaEspera()
             }
         }
     }
