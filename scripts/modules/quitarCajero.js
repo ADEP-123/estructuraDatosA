@@ -1,4 +1,5 @@
 import Variables from "../variables.js";
+import agregarError from "./agregarError.js";
 import redibujarUsoCajero from "./redibujarUsoCajero.js";
 
 const variables = new Variables
@@ -6,7 +7,7 @@ export default function quitarCajero() {
     const primerCajeroLibre = document.querySelector(".cajeroLibre")
     //detectar si existe un cajero libre para poderlo quitar
     if (!primerCajeroLibre) {
-        alert("Debe haber almenos un cajero libre para poderlo quitar")
+        agregarError("Debe haber almenos un cajero libre para poderlo quitar")
         return
     }
     //Quitando el cajero

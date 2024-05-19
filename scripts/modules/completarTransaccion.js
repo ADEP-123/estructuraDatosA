@@ -1,4 +1,5 @@
 import Variables from "../variables.js"
+import agregarError from "./agregarError.js"
 import redibujarFilaEspera from "./redibujarFilaEspera.js"
 import redibujarUsoCajero from "./redibujarUsoCajero.js"
 
@@ -7,7 +8,7 @@ const variables = new Variables
 export default function completarTransaccion() {
     const cajeroACompletar = variables.complTransSelect.value
     if (cajeroACompletar == 0) {
-        alert("Por favor seleccione uno de los cajeros")
+        agregarError("Por favor seleccione uno de los cajeros")
         return
     }
 

@@ -61,7 +61,7 @@ variables.completarTranscButt.addEventListener("click", e => {
     e.preventDefault();
     e.stopPropagation();
     if (variables.persCajeros.length == 0) {
-        alert("Debe haber almenos una persona en un cajero")
+        agregarError("Debe haber almenos una persona en un cajero")
     }
     completarTransaccion()
 })

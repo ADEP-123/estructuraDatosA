@@ -1,11 +1,12 @@
 import Variables from "../variables.js";
+import agregarError from "./agregarError.js";
 import dibujarPersonaEnCajeroLibre from "./dibujarPersonaEnCajeroLibre.js";
 
 const variables = new Variables
 export default function agregarPersona(persona) {
 
     if (variables.cantCajeros == 0) {
-        alert("Primero debe agregarse un cajero")
+        agregarError("Primero debe agregarse un cajero")
         return
     }
     //Obtener el primer cajero disponible
@@ -23,7 +24,7 @@ export default function agregarPersona(persona) {
         const heightZonaEspera = variables.zonaCola.clientHeight
         const lastUserHeigth = variables.arrPersonasEnEsp[0].clientHeight
         if (((lastUserHeigth * 0.5) * variables.arrPersonasEnEsp.length) > heightZonaEspera) {
-            alert("no puede haber mas personas en la fila de espera")
+            agregarError("No puede haber mas personas en la fila de espera")
             return
         }
     }
